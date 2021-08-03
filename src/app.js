@@ -14,7 +14,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 
 //------------ Connect to DB ------------// 
-mongoose.connect(process.env.URI, {
+mongoose.connect('mongodb+srv://city:securitypassword@cluster0.sxwfm.mongodb.net/rpg', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
