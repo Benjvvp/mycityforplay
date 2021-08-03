@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ("partials/head") %>
+</head>
+
+<body class="bg-dark">
+    <div class="w-75 mx-auto mt-5 p-4">
+        <div class="row mt-5">
+          <div class="col-md-6 m-auto">
+            <div class="card card-body shadow bg-gray">
+              <h1 class="mb-3 text-center">
+                <img src="/img/secure-icon.png" alt="icon" width="20%" />
+              </h1>
+              <h2 class="fw-bold text-white text-capitalize  text-center">
+                Reiniciar contraseña
+              </h2>
+              <%- include ("partials/messages") %>
+              <form action="/auth/reset/<%= id %>" method="POST" autocomplete="new-text">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                        placeholder="Enter Password"
+                        value="<%= typeof password != 'undefined' ? password : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" class="form-control"
+                        placeholder="Confirm Password"
+                        value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-2 btnregister">
+                  Reiniciar
+                </button>
+              </form>
+              <p class="mt-4 fw-bold text-white mb-0">¿Te has acordado de tu contraseña? <a href="/auth/login">Ingresar</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%- include('partials/scripts.ejs') %>
+</body>

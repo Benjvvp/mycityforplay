@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ("partials/head") %>
+</head>
+
+<body class="bg-dark">
+  <%- include('partials/svg.ejs') %>
+
+  <div class="w-75 mx-auto mt-5 p-4">
+    <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body shadow bg-gray">
+          <h1 class="mb-3 text-center">
+            <img src="/img/secure-icon.png" alt="icon" width="20%" />
+          </h1>
+          <h2 class="fw-bold text-white text-capitalize  text-center">
+            Registrarse
+          </h2>
+          <%- include ("partials/messages") %>
+          <form action="/auth/register" method="POST" autocomplete="new-text">
+            <div class="form-group text-white">
+              <input type="name" id="name" name="name" class="form-control mt-4 inp" placeholder="Ingresa Nombre"
+                value="<%= typeof name != 'undefined' ? name : '' %>" autocomplete="new-text""/>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-control mt-3 inp" placeholder="Ingresa Email"
+                value="<%= typeof email != 'undefined' ? email : '' %>" autocomplete="new-text"/>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" name="password" class="form-control mt-3 inp" placeholder="Ingresa Contraseña"
+                value="<%= typeof password != 'undefined' ? password : '' %>" autocomplete="new-text"/>
+            </div>
+            <div class="form-group">
+              <input type="password" id="password2" name="password2" class="form-control mt-3 inp" placeholder="Confirma Contraseña"
+                value="<%= typeof password2 != 'undefined' ? password2 : '' %>" autocomplete="new-text"/>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-2 btnregister">
+              Registrarse
+            </button>
+          </form>
+          <p class="mt-4 fw-bold text-white">¿Ya tienes una cuenta? <a href="/auth/login">Ingresar</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <%- include ('partials/scripts')  %>
+</body>
+
+</html>

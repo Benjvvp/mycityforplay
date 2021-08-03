@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("partials/head") %>
+</head>
+
+<body class="bg-dark">
+    <div class="w-75 mx-auto mt-5 p-4">
+        <div class="row mt-5">
+            <div class="col-md-6 m-auto">
+                <div class="card card-body shadow bg-gray">
+                    <h1 class="mb-3 text-center">
+                        <img src="/img/secure-icon.png" alt="icon" width="20%" />
+                    </h1>
+                    <h2 class="fw-bold text-white text-capitalize  text-center">
+                        Recuperar contraseña
+                    </h2>
+                    <%- include ("partials/messages") %>
+                    <form action="/auth/forgot" method="POST" autocomplete="new-text">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control mt-3 inp"
+                                placeholder="Ingresar Email" autocomplete="new-text" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-2 btnregister">
+                            Recuperar
+                        </button>
+                    </form>
+                    <p class="mt-4 fw-bold text-white mb-0">¿No tienes cuenta? <a href="/auth/register">Registrarse</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/scripts.ejs') %>
+</body>

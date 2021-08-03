@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("partials/head") %>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav fw-bold">
+                    <a class="nav-link link-animation" href="/">Inicio</a>
+                    <a class="nav-link link-animation" href="#">Sobre Nosotros</a>
+                    <a class="nav-link link-animation" href="/games">Juegos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="w-75 mx-auto mt-5 shadow">
+        <h1 class="fw-bold text-center color-black"><%= game.name %></h1>
+        <img src="<%= game.img %>" class="img-fluid mx-auto w-50 d-block pt-2" alt="...">
+        <div class="row g-0 border border-dark mt-5">
+            <div class="col-6 col-md-4 border-end p-3">
+                <center>
+                    <div class="stats">
+                        <div class="download game-stats">
+                            <i class="bi bi-download"></i>
+                            <span class="stat"><%= game.stats.download %></span>
+                        </div>
+                        <div class="views game-stats">
+                            <i class="bi bi-eye"></i>
+                            <span class="stat"><%= game.stats.views %></span>
+                        </div>
+                        <div class="star game-stats">
+                            <i class="bi bi-star"></i>
+                            <span class="stat"><%= game.stats.stars %></span>
+                        </div>
+                        <div class="comments game-stats" style="border: none;">
+                            <i class="bi bi-chat-left-dots"></i>
+                            <span class="stat"><%= game.stats.comments %></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <button type="button" class="btn btn-primary input-group-text h-100 mt-2"><a
+                            href="/download/<%= game._id %>" id="btn-d">Download</a></button>
+                    <div class="stars d-inline-block align-middle mt-1 ms-5">
+                        <a href="" class="b1"><i class="bi bi-star-fill"></i></a>
+                        <a href="" class="b2"><i class="bi bi-star-fill"></i></a>
+                        <a href="" class="b3"><i class="bi bi-star-fill"></i></a>
+                        <a href="" class="b4"><i class="bi bi-star-fill"></i></a>
+                        <a href="" class="b5"><i class="bi bi-star-fill"></i></a>
+                    </div>
+
+                </center>
+            </div>
+            <div class="col-sm-6 col-md-8 p-3">
+                <form action="/" method="post">
+                    <label class="form-label fw-bold">Description</label>
+                    <p><%= game.description %></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

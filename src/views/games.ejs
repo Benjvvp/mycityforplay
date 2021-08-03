@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("partials/head") %>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav fw-bold">
+                    <a class="nav-link link-animation" href="/">Inicio</a>
+                    <a class="nav-link link-animation" href="#">Sobre Nosotros</a>
+                    <a class="nav-link link-animation" aria-current="page" href="#">Juegos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="shadow-lg w-75 mx-auto mt-5 p-4">
+        <i class="bi bi-funnel-fill"></i>
+        <span class="sort pe-5">Filtrar por</span>
+        <a href="#" class="filter-link" id="sortViews">Vistas</a>
+        <a href="#" class="filter-link" id="sortTitle">Titulo</a>
+        <a href="#" class="filter-link" id="sortStar">Calificación</a>
+        <a href="#" class="filter-link" id="sortComments">Comentario</a>
+        <div class="btn-group filter-grid" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck1"><i class="bi bi-grid-1x2-fill"></i></label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck2"><i class="bi bi-grip-horizontal"></i></label>
+        </div>
+    </div>
+    <div class="w-75 mx-auto mt-5 p-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="games">
+            <% for(var i=0; i < games.length; i++) { %>
+            <div class="col">
+                <a href="/games/<%= games[i]._id %>" class="custom-card">
+                    <div class="card shadow-lg" style="width: 18rem; min-height: 18rem;">
+                        <img src="<%= games[i].img %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"><%= games[i].name %></h5>
+
+                            <center>
+                                <div class="stats">
+                                    <div class="download game-stats">
+                                        <i class="bi bi-download"></i>
+                                        <span class="stat"><%= games[i].stats.download %></span>
+                                    </div>
+                                    <div class="views game-stats">
+                                        <i class="bi bi-eye"></i>
+                                        <span class="stat"><%= games[i].stats.views %></span>
+                                    </div>
+                                    <div class="star game-stats">
+                                        <i class="bi bi-star"></i>
+                                        <span class="stat"><%= games[i].stats.stars %></span>
+                                    </div>
+                                    <div class="comments game-stats" style="border: none;">
+                                        <i class="bi bi-chat-left-dots"></i>
+                                        <span class="stat"><%= games[i].stats.comments %></span>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
