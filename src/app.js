@@ -8,12 +8,13 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const app = express();
+require('dotenv').config()
 
 /* DB */
 const mongoose = require('mongoose');
 
 //------------ Connect to DB ------------// 
-mongoose.connect('mongodb://localhost/rpg', {
+mongoose.connect(process.env.URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
