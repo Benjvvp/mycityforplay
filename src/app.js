@@ -12,7 +12,7 @@ const app = express();
 /* DB */
 const mongoose = require('mongoose');
 
-//------------ Connect to DB ------------//
+//------------ Connect to DB ------------// 
 mongoose.connect('mongodb://localhost/rpg', {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./config/passport')(passport);
 
 //------------ Middle Wares ------------//
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({
   secret: 'secret',
