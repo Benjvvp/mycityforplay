@@ -54,7 +54,7 @@ router.post('/addgame', async (req, res) => {
 //------------ Games Filters ------------//
 
 router.get('/games/filter/name', async (req, res) => {
-    const games = await Game.find().sort( { name: -1 } );
+    const games = await Game.find().sort( { name: 1 } );
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
@@ -62,7 +62,8 @@ router.get('/games/filter/name', async (req, res) => {
 })
 
 router.get('/games/filter/calification', async (req, res) => {
-    const games = await Game.find().sort( { stars: -1 } );
+    const games = await Game.find().sort( { "stats.stars": -1 }  );
+
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
@@ -70,7 +71,7 @@ router.get('/games/filter/calification', async (req, res) => {
 })
 
 router.get('/games/filter/views', async (req, res) => {
-    const games = await Game.find().sort( { views: -1 } );
+    const games = await Game.find().sort( { "stats.view": -1 } );
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
@@ -78,7 +79,7 @@ router.get('/games/filter/views', async (req, res) => {
 })
 
 router.get('/games/filter/comments', async (req, res) => {
-    const games = await Game.find().sort( { comment: -1 } );
+    const games = await Game.find().sort( { "stats.comment": -1 }  );
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
