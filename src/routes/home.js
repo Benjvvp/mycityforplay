@@ -71,7 +71,7 @@ router.get('/games/filter/calification', async (req, res) => {
 })
 
 router.get('/games/filter/views', async (req, res) => {
-    const games = await Game.find().sort( { "stats.view": -1 } );
+    const games = await Game.find().sort( { "stats.views": -1 } );
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
@@ -79,7 +79,7 @@ router.get('/games/filter/views', async (req, res) => {
 })
 
 router.get('/games/filter/comments', async (req, res) => {
-    const games = await Game.find().sort( { "stats.comment": -1 }  );
+    const games = await Game.find().sort( { "stats.comments": -1 }  );
     res.render('games', {
         games,
         title: 'City For Play ~ Juegos'
