@@ -26,11 +26,11 @@
         <a href="/games/filter/calification" class="filter-link" id="sortStar">Calificación</a>
         <a href="/games/filter/comments" class="filter-link" id="sortComments">Comentario</a>
         <div class="btn-group filter-grid" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btncheck1"><i class="bi bi-grid-1x2-fill"></i></label>
+            <input type="checkbox" class="btn-check" id="cards" autocomplete="off" name="check[]">
+            <label class="btn btn-outline-primary" for="cards"><i class="bi bi-grid-1x2-fill"></i></label>
 
-            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btncheck2"><i class="bi bi-grip-horizontal"></i></label>
+            <input type="checkbox" class="btn-check" id="minicards" autocomplete="off" name="check[]"">
+            <label class="btn btn-outline-primary" for="minicards"><i class="bi bi-grip-horizontal"></i></label>
         </div>
     </div>
     <div class="w-75 mx-auto mt-5 p-4">
@@ -77,6 +77,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <%- include ('partials/scripts')  %>
+    <script src="/js/gamesview.js"></script>
 </body>
-
 </html>
