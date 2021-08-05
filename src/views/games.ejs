@@ -21,20 +21,57 @@
     <div class="shadow-lg w-75 mx-auto mt-5 p-4">
         <i class="bi bi-funnel-fill"></i>
         <span class="sort pe-5">Filtrar por</span>
-        <a href="/games/filter/views" class="filter-link" id="sortViews">Vistas</a>
-        <a href="/games/filter/name" class="filter-link" id="sortTitle">Titulo</a>
-        <a href="/games/filter/calification" class="filter-link" id="sortStar">Calificación</a>
-        <a href="/games/filter/comments" class="filter-link" id="sortComments">Comentario</a>
+        <a href="#" class="filter-link" id="sortViews">Vistas</a>
+        <a href="#" class="filter-link" id="sortTitle">Titulo</a>
+        <a href="#" class="filter-link" id="sortStar">Calificación</a>
+        <a href="#" class="filter-link" id="sortComments">Comentario</a>
         <div class="btn-group filter-grid" role="group" aria-label="Basic checkbox toggle button group">
             <input type="checkbox" class="btn-check" id="cards" autocomplete="off" name="check[]">
             <label class="btn btn-outline-primary" for="cards"><i class="bi bi-grid-1x2-fill"></i></label>
 
             <input type="checkbox" class="btn-check" id="minicards" autocomplete="off" name="check[]"">
-            <label class="btn btn-outline-primary" for="minicards"><i class="bi bi-grip-horizontal"></i></label>
+            <label class=" btn btn-outline-primary" for="minicards"><i class="bi bi-grip-horizontal"></i></label>
         </div>
     </div>
     <div class="w-75 mx-auto mt-5 p-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="games">
+            <% if(view === 'minicards') {%>
+            <div class="container">
+                <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                    <% for(var i=0; i < games.length; i++) { %>
+                    <div class="col">
+                        <a href="/games/<%= games[i]._id %>" class="custom-card">
+                            <div class="card shadow-lg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><%= games[i].name %></h5>
+                                    <center>
+                                        <div class="stats">
+                                            <div class="download game-stats">
+                                                <i class="bi bi-download"></i>
+                                                <span class="stat"><%= games[i].stats.download %></span>
+                                            </div>
+                                            <div class="views game-stats">
+                                                <i class="bi bi-eye"></i>
+                                                <span class="stat"><%= games[i].stats.views %></span>
+                                            </div>
+                                            <div class="star game-stats">
+                                                <i class="bi bi-star"></i>
+                                                <span class="stat"><%= games[i].stats.stars %></span>
+                                            </div>
+                                            <div class="comments game-stats" style="border: none;">
+                                                <i class="bi bi-chat-left-dots"></i>
+                                                <span class="stat"><%= games[i].stats.comments %></span>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+            <%} else {%>
+                <div class="row justify-content-start" id="games">
             <% for(var i=0; i < games.length; i++) { %>
             <div class="col">
                 <a href="/games/<%= games[i]._id %>" class="custom-card">
@@ -68,6 +105,8 @@
                 </a>
             </div>
             <% } %>
+            </div>
+            <%}%>
         </div>
     </div>
 
@@ -77,6 +116,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <%- include ('partials/scripts')  %>
-    <script src="/js/gamesview.js"></script>
+            <script src="/js/gamesview.js"></script>
 </body>
+
 </html>

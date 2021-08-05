@@ -22,11 +22,52 @@ router.get('/about', async (req, res) => {
 })
 
 router.get('/games', async (req, res) => {
-    const games = await Game.find();
-    res.render('games', {
-        games,
-        title: 'City For Play ~ Juegos'
-    });
+    const view = req.query.view;
+    if (req.query.filter === 'name') {
+        const games = await Game.find().sort({
+            name: 1
+        });
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    } else if (req.query.filter === 'views') {
+        const games = await Game.find().sort({
+            "stats.views": -1
+        });
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    } else if (req.query.filter === 'calification') {
+        const games = await Game.find().sort({
+            "stats.stars": -1
+        });
+
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    } else if (req.query.filter === 'comments') {
+        const games = await Game.find().sort({
+            "stats.comments": -1
+        });
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    } else {
+        const games = await Game.find()
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    }
 })
 
 router.get('/games/:id', async (req, res) => {
@@ -49,41 +90,5 @@ router.post('/addgame', async (req, res) => {
     await newGame.save();
     res.redirect('addgame')
 });
-
-
-//------------ Games Filters ------------//
-
-router.get('/games/filter/name', async (req, res) => {
-    const games = await Game.find().sort( { name: 1 } );
-    res.render('games', {
-        games,
-        title: 'City For Play ~ Juegos'
-    });
-})
-
-router.get('/games/filter/calification', async (req, res) => {
-    const games = await Game.find().sort( { "stats.stars": -1 }  );
-
-    res.render('games', {
-        games,
-        title: 'City For Play ~ Juegos'
-    });
-})
-
-router.get('/games/filter/views', async (req, res) => {
-    const games = await Game.find().sort( { "stats.views": -1 } );
-    res.render('games', {
-        games,
-        title: 'City For Play ~ Juegos'
-    });
-})
-
-router.get('/games/filter/comments', async (req, res) => {
-    const games = await Game.find().sort( { "stats.comments": -1 }  );
-    res.render('games', {
-        games,
-        title: 'City For Play ~ Juegos'
-    });
-})
 
 module.exports = router;
