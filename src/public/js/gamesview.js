@@ -34,3 +34,11 @@ $('#sortComments').on('click', function(){
     url.set('filter', 'comments');
     window.location.search = url;
 })
+$('#sortOurGames').on('click', function(){
+    url.set('filter', 'ourgames');
+    window.location.search = url;
+})
+$('#sortAnotherPerson').on('click', function(){
+    url.set('filter', 'anotherperson');
+    window.location.search = url;
+})

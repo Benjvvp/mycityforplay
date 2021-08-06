@@ -103,9 +103,6 @@
     font-family: 'Prompt', sans-serif;
     transition: color 0.2s ease;
 }
-.filter-grid{
-    padding-left: 55%;
-}
 .stats{
     display: inline;
 }

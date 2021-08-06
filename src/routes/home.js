@@ -60,6 +60,24 @@ router.get('/games', async (req, res) => {
             title: 'City For Play ~ Juegos',
             view
         });
+    } else if (req.query.filter === 'ourgames') {
+        const games = await Game.find({
+            mygame: true
+        })
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
+    } else if (req.query.filter === 'anotherperson') {
+        const games = await Game.find({
+            mygame: false
+        })
+        res.render('games', {
+            games,
+            title: 'City For Play ~ Juegos',
+            view
+        });
     } else {
         const games = await Game.find()
         res.render('games', {
@@ -85,7 +103,8 @@ router.post('/addgame', async (req, res) => {
     const newGame = new Game({
         name: req.body.name,
         img: req.body.img,
-        description: req.body.description
+        description: req.body.description,
+        mygame: req.body.mygame,
     })
     await newGame.save();
     res.redirect('addgame')

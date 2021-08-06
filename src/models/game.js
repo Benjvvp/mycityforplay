@@ -15,6 +15,10 @@ const gameShema = Schema({
         type: String,
         required: true
     },
+    mygame: {
+        type: Boolean,
+        required: true
+    },
     stats: {
         download: {
             type: Number,
