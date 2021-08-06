@@ -19,6 +19,10 @@ const gameShema = Schema({
         type: Boolean,
         required: true
     },
+    userscalification: {
+        type: [String],
+        required: true
+    },
     stats: {
         download: {
             type: Number,
@@ -33,7 +37,7 @@ const gameShema = Schema({
         stars: {
             type: Number,
             default: 0,
-            required: true
+            required: true,
         },
         comments: {
             type: Number,
