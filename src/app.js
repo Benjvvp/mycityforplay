@@ -22,7 +22,7 @@ mongoose.connect('mongodb+srv://city:securitypassword@cluster0.sxwfm.mongodb.net
     .catch(err => console.log(err))
 
 //------------ Settings ------------//
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 80)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
