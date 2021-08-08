@@ -105,6 +105,7 @@ router.post('/addgame', async (req, res) => {
         img: req.body.img,
         description: req.body.description,
         mygame: Boolean(req.body.mygame),
+        gamebox: req.body.gamebox
     })
     await newGame.save();
     res.redirect('addgame')

@@ -23,26 +23,27 @@ router.get('/addgame', (req, res, next) => {
 
 //------------ Calification Game ------------//
 router.get('/games/:id/calification/:num', async (req, res) => {
-    let game = await Game.findById(req.params.id);
+    let id_game = req.params.id;
+    let game = await Game.findById(id_game);
     if (game.userscalification.includes(req.user.id)) {
         req.flash(
             'error_msg',
             'Ya lo has calificado anteriormente.'
         );
-        res.redirect(`/games/${req.params.id}`)
+        res.redirect(`/games/${id_game}`)
     } else {
-        await Game.findOneAndUpdate(req.params.id, {
+        await Game.findByIdAndUpdate(id_game, {
             $push: {
                 userscalification: req.user.id
-            }
+            },
         })
-        game.stats.stars = game.stats.stars + req.params.num;
+        game.stats.stars = parseInt(game.stats.stars) + parseInt(req.params.num);
         game.save()
         req.flash(
             'success_msg',
             'Has calificado con exito.'
         );
-        res.redirect(`/games/${req.params.id}`)
+        res.redirect(`/games/${id_game}`)
     }
 
 

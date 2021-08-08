@@ -20,22 +20,30 @@
     <div class="w-75 mx-auto mt-5 shadow">
         <%- include ("partials/messages") %>
         <h1 class="fw-bold text-center color-black"><%= game.name %></h1>
+        <% if(game.mygame) {%>
         <img src="<%= game.img %>" class="img-fluid mx-auto w-50 d-block pt-2" alt="...">
-        <div class="row g-0 border border-dark mt-5">
+        <% } else { %>
+        <iframe
+            src="<%= game.gamebox%>"
+            frameborder="0" referrerpolicy="no-referrer" allowfullscreen=""
+            style="width:968px;height:726px;overflow:hidden;border: 0px;" class="mx-auto d-flex justify-content-center"></iframe>
+        <% }%>
+        <div class="row g-0 border border-dark mt-5 mb-5">
             <div class="col-6 col-md-4 border-end p-3">
                 <center>
                     <div class="stats">
-                        <div class="download game-stats">
-                            <i class="bi bi-download"></i>
-                            <span class="stat"><%= game.stats.download %></span>
-                        </div>
                         <div class="views game-stats">
                             <i class="bi bi-eye"></i>
                             <span class="stat"><%= game.stats.views %></span>
                         </div>
                         <div class="star game-stats">
                             <i class="bi bi-star"></i>
-                            <span class="stat"><%= game.stats.stars/game.userscalification.length %></span>
+                            <span class="stat"><% if(isNaN(game.stats.stars/game.userscalification.length )) {%>
+                                0
+                                <% } else { %>
+                                <%= game.stats.stars/game.userscalification.length %>
+                                <% }%>
+                            </span>
                         </div>
                         <div class="comments game-stats" style="border: none;">
                             <i class="bi bi-chat-left-dots"></i>
@@ -43,9 +51,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button type="button" class="btn btn-primary input-group-text h-100 mt-2"><a
-                            href="/download/<%= game._id %>" id="btn-d">Download</a></button>
-                    <div class="stars d-inline-block align-middle mt-1 ms-5">
+                    <div class="stars d-inline-block align-middle mt-1">
                         <a href="/games/<%= game._id %>/calification/5" class="b1"><i class="bi bi-star-fill"></i></a>
                         <a href="/games/<%= game._id %>/calification/4" class="b2"><i class="bi bi-star-fill"></i></a>
                         <a href="/games/<%= game._id %>/calification/3" class="b3"><i class="bi bi-star-fill"></i></a>
