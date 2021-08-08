@@ -63,6 +63,6 @@ app.use(require('./routes/web'))
 
 
 //------------ Start the server ------------//
-app.listen(app.get('port', '127.0.0.1'), () => {
+app.listen(app.get('port'), () => {
   console.log(chalk.bold.green(`Server on port ${app.get('port')}`))
 })
