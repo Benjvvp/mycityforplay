@@ -15,64 +15,45 @@ router.get('/phone', async (req, res) => {
     });
 })
 
-router.get('/about', async (req, res) => {
-    res.render('about', {
-        title: 'City For Play ~ Acerca'
-    });
-})
-
 router.get('/games', async (req, res) => {
     const view = req.query.view;
-    if (req.query.filter === 'name') {
-        const games = await Game.find().sort({
-            name: 1
-        });
+    if (req.query.category === 'action') {
+        const games = await Game.find({'category': 'action'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',
             view
         });
-    } else if (req.query.filter === 'views') {
-        const games = await Game.find().sort({
-            "stats.views": -1
-        });
+    } else if (req.query.category === 'adventure') {
+        const games = await Game.find({'category': 'adventure'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',
             view
         });
-    } else if (req.query.filter === 'calification') {
-        const games = await Game.find().sort({
-            "stats.stars": -1
-        });
-
+    } else if (req.query.category === 'conduction') {
+        const games = await Game.find({'category': 'conduction'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',
             view
         });
-    } else if (req.query.filter === 'comments') {
-        const games = await Game.find().sort({
-            "stats.comments": -1
-        });
+    } else if (req.query.category === 'platform') {
+        const games = await Game.find({'category': 'platform'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',
             view
         });
-    } else if (req.query.filter === 'ourgames') {
-        const games = await Game.find({
-            mygame: true
-        })
+    } else if (req.query.category === 'shooter') {
+        const games = await Game.find({'category': 'shooter'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',
             view
         });
-    } else if (req.query.filter === 'anotherperson') {
-        const games = await Game.find({
-            mygame: false
-        })
+    } else if (req.query.category === 'simulation') {
+        const games = await Game.find({'category': 'simulation'})
         res.render('games', {
             games,
             title: 'City For Play ~ Juegos',

@@ -4,84 +4,66 @@
 <head>
     <%- include ("partials/head") %>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5926464001789891"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav fw-bold">
-                    <a class="nav-link link-animation" href="/">Inicio</a>
-                    <a class="nav-link link-animation" href="/about">Sobre Nosotros</a>
-                    <a class="nav-link link-animation" aria-current="page" href="#">Juegos</a>
+<body class="bg-dark">
+    <div class="wrapper gamesbackground position-relative">
+        <nav class="navbar navbar-expand-lg navbar-light position-background">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav fw-bold">
+                        <a class="nav-link link-animation" href="/">Inicio</a>
+                        <a class="nav-link link-animation" aria-current="page" href="#">Juegos</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <div class="shadow-lg w-75 mx-auto mt-5 p-4">
-        <i class="bi bi-funnel-fill"></i>
-        <span class="sort pe-5">Filtrar por</span>
-        <a href="#" class="filter-link" id="sortViews">Vistas</a>
-        <a href="#" class="filter-link" id="sortTitle">Titulo</a>
-        <a href="#" class="filter-link" id="sortStar">Calificación</a>
-        <a href="#" class="filter-link" id="sortOurGames">Nuestros Juegos</a>
-        <a href="#" class="filter-link" id="sortAnotherPerson">De otra persona</a>
-        <div class="btn-group filter-grid " role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="cards" autocomplete="off" name="check[]">
-            <label class="btn btn-outline-primary" for="cards"><i class="bi bi-grid-1x2-fill"></i></label>
+        </nav>
+        <div class="container gamestext">
+            <h1>Encuentra tu juego!</h1>
+            <p>Puedes encontrar todo tipo de juego y juega el que mas te guste!.</p>
+            <div class="d-grid col-1 mx-auto">
+                <a href="#games"><button type="button" class="btn"><i class="bi bi-arrow-down"></i></button></a>
+            </div>
 
-            <input type="checkbox" class="btn-check" id="minicards" autocomplete="off" name="check[]"">
-            <label class=" btn btn-outline-primary" for="minicards"><i class="bi bi-grip-horizontal"></i></label>
         </div>
     </div>
-    <div class="w-75 mx-auto mt-5 p-4">
-        <% if(view === 'minicards') {%>
-        <div class="container">
-            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-                <% for(var i=0; i < games.length; i++) { %>
-                <div class="col">
-                    <a href="/games/<%= games[i]._id %>" class="custom-card">
-                        <div class="card shadow-lg">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"><%= games[i].name %></h5>
-                                <center>
-                                    <div class="stats">
-                                        <div class="download game-stats">
-                                            <i class="bi bi-download"></i>
-                                            <span class="stat"><%= games[i].stats.download %></span>
-                                        </div>
-                                        <div class="views game-stats">
-                                            <i class="bi bi-eye"></i>
-                                            <span class="stat"><%= games[i].stats.views %></span>
-                                        </div>
-                                        <div class="star game-stats">
-                                            <i class="bi bi-star"></i>
-                                            <span
-                                                class="stat"><% if(isNaN(games[i].stats.stars/games[i].userscalification.length)) {%>
-                                                0
-                                                <% } else { %>
-                                                <%= games[i].stats.stars/games[i].userscalification.length%>
-                                                <% }%>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <% } %>
-            </div>
+    <div class="w-75 mx-auto mt-5 p-4" id="games">
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mb-5">
+            <a href="" class="text-decoration-none" id="categoryAction"><div class="category">
+                <img src="/img/game_category/action.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Accion</p>
+            </div></a>
+            <a href="" class="text-decoration-none" id="categoryAdventure"><div class="category">
+                <img src="/img/game_category/adventure.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Aventura</p>
+            </div></a>
+            <a href="" class="text-decoration-none" id="categoryConduction"><div class="category">
+                <img src="/img/game_category/conduction.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Conduccion</p>
+            </div></a>
+            <a href="" class="text-decoration-none" id="categoryPlatform"><div class="category">
+                <img src="/img/game_category/platform.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Platform</p>
+            </div></a>
+            <a href="" class="text-decoration-none" id="categoryShooter"><div class="category">
+                <img src="/img/game_category/shooter.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Shooter</p>
+            </div></a>
+            <a href="" class="text-decoration-none" id="categorySimulation"><div class="category">
+                <img src="/img/game_category/simulation.png" alt="" class="img-fluid d-block mx-auto p-3">
+                <p class="fw-bold text-center text-white">Simulacion</p>
+            </div></a>
         </div>
-        <%} else {%>
-        <div class="row justify-content-start" id="games">
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
             <% for(var i=0; i < games.length; i++) { %>
             <div class="col">
                 <a href="/games/<%= games[i]._id %>" class="custom-card">
-                    <div class="card shadow-lg mt-2" style="width: 18rem; min-height: 18rem; max-width: 18rem;">
-                        <img src="<%= games[i].img %>" style="max-width: auto; max-height: 13rem; min-height: 13rem;" class="card-img-top" alt="...">
+                    <div class="card shadow-lg mt-2 border-0 gamecard">
+                        <img src="<%= games[i].img %>" style="max-width: auto; max-height: 13rem; min-height: 13rem; border-radius: 10px 10px 0 0;"
+                            class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><%= games[i].name %></h5>
 
@@ -111,9 +93,8 @@
                     </div>
                 </a>
             </div>
-            <% } %>
+            <%}%>
         </div>
-        <%}%>
         </div>
     </div>
 

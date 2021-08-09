@@ -1,44 +1,26 @@
 var url = new URLSearchParams(window.location.search);
 
-const sortViews = document.getElementById('sortViews');
-const sortTitle = document.getElementById('sortTitle');
-const sortStar = document.getElementById('sortStar');
-const sortComments = document.getElementById('sortComments');
-
-const listgame = document.querySelectorAll('.gametable')
-$('input[type="checkbox"]').on('change', function () {
-    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
-    if (this.id === 'cards') {
-        url.set('view', 'cards');
-        window.location.search = url;
-    }
-    if (this.id === 'minicards') {
-        url.set('view', 'minicards');
-        window.location.search = url;
-    }
-});
-
-$('#sortViews').on('click', function(){
-    url.set('filter', 'views');
+$('#categoryAction').on('click', function(){
+    url.set('category', 'action');
     window.location.search = url;
 })
-$('#sortTitle').on('click', function(){
-    url.set('filter', 'name');
+$('#categoryAdventure').on('click', function(){
+    url.set('category', 'adventure');
     window.location.search = url;
 })
-$('#sortStar').on('click', function(){
-    url.set('filter', 'calification');
+$('#categoryConduction').on('click', function(){
+    url.set('category', 'conduction');
     window.location.search = url;
 })
-$('#sortComments').on('click', function(){
-    url.set('filter', 'comments');
+$('#categoryPlatform').on('click', function(){
+    url.set('category', 'platform');
     window.location.search = url;
 })
-$('#sortOurGames').on('click', function(){
-    url.set('filter', 'ourgames');
+$('#categoryShooter').on('click', function(){
+    url.set('category', 'shooter');
     window.location.search = url;
 })
-$('#sortAnotherPerson').on('click', function(){
-    url.set('filter', 'anotherperson');
+$('#categorySimulation').on('click', function(){
+    url.set('category', 'simulation');
     window.location.search = url;
 })
