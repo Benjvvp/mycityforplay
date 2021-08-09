@@ -11,10 +11,6 @@ const gameShema = Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
-    },
     mygame: {
         type: Boolean,
         required: true
@@ -41,11 +37,6 @@ const gameShema = Schema({
             type: Number,
             default: 0,
             required: true,
-        },
-        comments: {
-            type: Number,
-            default: 0,
-            required: true
         },
     }
 });

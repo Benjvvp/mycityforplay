@@ -3,6 +3,8 @@
 
 <head>
     <%- include ("partials/head") %>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5926464001789891"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,10 +25,10 @@
         <% if(game.mygame) {%>
         <img src="<%= game.img %>" class="img-fluid mx-auto w-50 d-block pt-2" alt="...">
         <% } else { %>
-        <iframe
-            src="<%= game.gamebox%>"
-            frameborder="0" referrerpolicy="no-referrer" allowfullscreen=""
-            style="width:968px;height:726px;overflow:hidden;border: 0px;" class="mx-auto d-flex justify-content-center"></iframe>
+        <iframe src="<%= game.gamebox %>" width="960" role="application" allowtransparency="true"
+            class="mx-auto d-flex justify-content-center" height="600" frameborder="no" scrolling="no"
+            allow="autoplay; fullscreen; microphone" webkitallowfullscreen="true" mozallowfullscreen="true"
+            msallowfullscreen="true" allowfullscreen="true"></iframe>
         <% }%>
         <div class="row g-0 border border-dark mt-5 mb-5">
             <div class="col-6 col-md-4 border-end p-3">
@@ -36,7 +38,7 @@
                             <i class="bi bi-eye"></i>
                             <span class="stat"><%= game.stats.views %></span>
                         </div>
-                        <div class="star game-stats">
+                        <div class="star game-stats border-0">
                             <i class="bi bi-star"></i>
                             <span class="stat"><% if(isNaN(game.stats.stars/game.userscalification.length )) {%>
                                 0
@@ -44,10 +46,6 @@
                                 <%= game.stats.stars/game.userscalification.length %>
                                 <% }%>
                             </span>
-                        </div>
-                        <div class="comments game-stats" style="border: none;">
-                            <i class="bi bi-chat-left-dots"></i>
-                            <span class="stat"><%= game.stats.comments %></span>
                         </div>
                     </div>
                     <hr>
@@ -62,10 +60,15 @@
                 </center>
             </div>
             <div class="col-sm-6 col-md-8 p-3">
-                <form action="/" method="post">
-                    <label class="form-label fw-bold">Description</label>
-                    <p><%= game.description %></p>
-                </form>
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5926464001789891"
+                    crossorigin="anonymous"></script>
+                <!-- Seccion GAME -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5926464001789891"
+                    data-ad-slot="3207659529" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </div>

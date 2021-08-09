@@ -65,10 +65,6 @@
                                                 <% }%>
                                             </span>
                                         </div>
-                                        <div class="comments game-stats" style="border: none;">
-                                            <i class="bi bi-chat-left-dots"></i>
-                                            <span class="stat"><%= games[i].stats.comments %></span>
-                                        </div>
                                     </div>
                                 </center>
                             </div>
@@ -98,7 +94,7 @@
                                         <i class="bi bi-eye"></i>
                                         <span class="stat"><%= games[i].stats.views %></span>
                                     </div>
-                                    <div class="star game-stats">
+                                    <div class="star game-stats border-0">
                                         <i class="bi bi-star"></i>
                                         <span
                                             class="stat"><% if(isNaN(games[i].stats.stars/games[i].userscalification.length)) {%>
@@ -107,10 +103,6 @@
                                             <%= games[i].stats.stars/games[i].userscalification.length%>
                                             <% }%>
                                         </span>
-                                    </div>
-                                    <div class="comments game-stats" style="border: none;">
-                                        <i class="bi bi-chat-left-dots"></i>
-                                        <span class="stat"><%= games[i].stats.comments %></span>
                                     </div>
                                 </div>
                             </center>

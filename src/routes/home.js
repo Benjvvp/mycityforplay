@@ -103,7 +103,6 @@ router.post('/addgame', async (req, res) => {
     const newGame = new Game({
         name: req.body.name,
         img: req.body.img,
-        description: req.body.description,
         mygame: Boolean(req.body.mygame),
         gamebox: req.body.gamebox
     })
