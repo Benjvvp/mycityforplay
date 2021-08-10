@@ -17,20 +17,24 @@ router.get('/phone', async (req, res) => {
 })
 
 router.get('/games', async (req, res) => {
-    if(req.query.category === 'action'||'adventure'||'conduction'||'platform'||'shooter'||'simulation'){
-        const games = await Game.find({'category': req.query.category});
+    if (req.query.category === 'action' || 'adventure' || 'conduction' || 'platform' || 'shooter' || 'simulation') {
+        const games = await Game.find({
+            'category': req.query.category
+        });
         res.render('games', {
             games,
             title: `City For Play ~ Juegos`
         });
     } else {
-        const games = await Game.find();
+        const games = await Game.find().sort({
+            name: 1
+        });
         res.render('games', {
             games,
             title: `City For Play ~ Juegos`
         });
     }
-    
+
 })
 
 router.get('/games/:id', async (req, res) => {
@@ -45,13 +49,13 @@ router.get('/games/:id', async (req, res) => {
 
 //------------ Post ------------//
 router.post('/addgame', async (req, res) => {
-    function getselection (number){
-        if(number == 1) return 'action';
-        if(number == 2) return 'adventure';
-        if(number == 3) return 'conduction';
-        if(number == 4) return 'platform';
-        if(number == 5) return 'shooter';
-        if(number == 6) return 'simulation';
+    function getselection(number) {
+        if (number == 1) return 'action';
+        if (number == 2) return 'adventure';
+        if (number == 3) return 'conduction';
+        if (number == 4) return 'platform';
+        if (number == 5) return 'shooter';
+        if (number == 6) return 'simulation';
     }
     const newGame = new Game({
         name: req.body.name,
