@@ -2,21 +2,19 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 /* Index Banner */
-.carousel-caption {
-    margin-bottom: 17%;
-}
 
-.carousel-caption h3 {
-    font-size: 5rem;
-    text-transform: uppercase;
+.indextext h1 {
+    font-size: 730%;
+    font-weight: bold;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20%;
     font-family: 'Otomanopee One', sans-serif;
 }
 
-.carousel-caption h5 {
-    font-family: 'Prompt', sans-serif;
-}
-
-.carousel-caption h3 span {
+.indextext h1 span {
     color: #710193;
 }
 
@@ -298,5 +296,17 @@
     .countdown-container>div {
         margin: 1rem auto;
         max-width: 150px;
+    }
+}
+
+@media (max-width:768px) {
+    .gamestext h1 {
+        font-size: 500%;
+    }
+    .carousel-caption {
+        transform: translateY(-50%);
+    }
+    .indextext h1 {
+        font-size: 500%;
     }
 }
