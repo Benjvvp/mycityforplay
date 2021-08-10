@@ -112,7 +112,7 @@
                                             class="stat"><% if(isNaN(games[i].stats.stars/games[i].userscalification.length)) {%>
                                             0
                                             <% } else { %>
-                                            <%= games[i].stats.stars/games[i].userscalification.length%>
+                                            <%= Number.parseFloat(games[i].stats.stars/games[i].userscalification.length).toFixed(1) %>
                                             <% }%>
                                         </span>
                                     </div>

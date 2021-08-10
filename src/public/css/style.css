@@ -99,28 +99,12 @@
 }
 
 /* Games HTML */
-.sort {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: 'Prompt', sans-serif;
-    font-size: 0.9em;
-}
-
-.filter-link {
-    padding: 0px 5px 0px 5px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-family: 'Prompt', sans-serif;
-    transition: color 0.2s ease;
-}
 
 .stats {
     display: inline;
 }
 
 .game-stats {
-    border-right: 1px solid white;
     margin-top: 10px;
     padding: 0px 10px 0px;
     display: inline-block;
@@ -151,7 +135,7 @@
 
 .stars a {
     font-size: 20px;
-    color: #313131;
+    color: #7a6b2b;
     transition: 0.3s all;
 }
 
@@ -213,22 +197,6 @@
 }
 
 /* ABOUT SECTION */
-.countdown-container>div {
-    margin: 0 1rem;
-    text-align: center;
-    border: 2px solid #fff;
-    padding: 0 10px;
-    color: #fff;
-    min-width: 150px;
-}
-
-.big-text {
-    font-size: 250%;
-}
-
-.separatorcount {
-    font-size: 300%;
-}
 
 .gamesbackground {
     background: url('../img/gamesbanner.jpeg');
@@ -301,7 +269,9 @@
 .mybutton:hover{
     color: white !important;
 }
-
+.gametitle{
+    font-size: 300%;
+}
 @media (max-width:992px) {
     .countdown-container>div {
         margin: 0 1rem;
