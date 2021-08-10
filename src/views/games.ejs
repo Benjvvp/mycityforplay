@@ -29,32 +29,60 @@
 
         </div>
     </div>
-    <div class="w-75 mx-auto mt-5 p-4" id="games">
+    <div class="w-75 mx-auto mt-5 p-4 pt-0" id="games">
+        <div class="d-flex justify-content-center mb-3">
+            <button type="button" class="btn mybutton me-2"><a href="/auth/login">Login</a></button>
+            <button type="button" class="btn mybutton"><a href="/auth/register">Register</a></button>
+        </div>
         <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mb-5">
-            <a href="#" class="text-decoration-none" id="categoryAction"><div class="category">
-                <img src="/img/game_category/action.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Accion</p>
-            </div></a>
-            <a href="#" class="text-decoration-none" id="categoryAdventure"><div class="category">
-                <img src="/img/game_category/adventure.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Aventura</p>
-            </div></a>
-            <a href="#" class="text-decoration-none" id="categoryConduction"><div class="category">
-                <img src="/img/game_category/conduction.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Conduccion</p>
-            </div></a>
-            <a href="#" class="text-decoration-none" id="categoryPlatform"><div class="category">
-                <img src="/img/game_category/platform.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Platform</p>
-            </div></a>
-            <a href="#" class="text-decoration-none" id="categoryShooter"><div class="category">
-                <img src="/img/game_category/shooter.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Shooter</p>
-            </div></a>
-            <a href="#" class="text-decoration-none" id="categorySimulation"><div class="category">
-                <img src="/img/game_category/simulation.png" alt="" class="img-fluid d-block mx-auto p-3">
-                <p class="fw-bold text-center text-white">Simulacion</p>
-            </div></a>
+            <a href="#" class="text-decoration-none" id="categoryAction">
+                <div class="category">
+                    <img src="/img/game_category/action.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Accion</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryAdventure">
+                <div class="category">
+                    <img src="/img/game_category/adventure.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Aventura</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryConduction">
+                <div class="category">
+                    <img src="/img/game_category/conduction.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Conduccion</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryPlatform">
+                <div class="category">
+                    <img src="/img/game_category/platform.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Platform</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryShooter">
+                <div class="category">
+                    <img src="/img/game_category/shooter.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Shooter</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categorySimulation">
+                <div class="category">
+                    <img src="/img/game_category/simulation.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Simulacion</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryStrategic">
+                <div class="category">
+                    <img src="/img/game_category/strategic.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Estrategia</p>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none" id="categoryFight">
+                <div class="category">
+                    <img src="/img/game_category/fight.png" alt="" class="img-fluid d-block mx-auto p-3">
+                    <p class="fw-bold text-center text-white">Guerra</p>
+                </div>
+            </a>
         </div>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -62,7 +90,8 @@
             <div class="col">
                 <a href="/games/<%= games[i]._id %>" class="custom-card">
                     <div class="card shadow-lg mt-2 border-0 gamecard">
-                        <img src="<%= games[i].img %>" style="max-width: auto; max-height: 13rem; min-height: 13rem; border-radius: 10px 10px 0 0;"
+                        <img src="<%= games[i].img %>"
+                            style="max-width: auto; max-height: 13rem; min-height: 13rem; border-radius: 10px 10px 0 0;"
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><%= games[i].name %></h5>
@@ -104,7 +133,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <%- include ('partials/scripts')  %>
-        <script src="/js/gamesview.js"></script>
+            <script src="/js/gamesview.js"></script>
 </body>
 
 </html>

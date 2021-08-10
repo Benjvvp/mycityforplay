@@ -289,6 +289,19 @@
     border-radius: 10px;
 }
 
+.mybutton{
+    background-color: #710193;
+    color: white;
+    font-weight: bold;
+}
+.mybutton a{
+    color: white;
+    text-decoration: none;
+}
+.mybutton:hover{
+    color: white !important;
+}
+
 @media (max-width:992px) {
     .countdown-container>div {
         margin: 0 1rem;

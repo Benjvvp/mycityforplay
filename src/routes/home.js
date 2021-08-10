@@ -17,15 +17,7 @@ router.get('/phone', async (req, res) => {
 })
 
 router.get('/games', async (req, res) => {
-    if (req.query.category === 'action' || 'adventure' || 'conduction' || 'platform' || 'shooter' || 'simulation') {
-        const games = await Game.find({
-            'category': req.query.category
-        });
-        res.render('games', {
-            games,
-            title: `City For Play ~ Juegos`
-        });
-    } else {
+    if(req.query.category == undefined){
         const games = await Game.find().sort({
             name: 1
         });
@@ -33,8 +25,17 @@ router.get('/games', async (req, res) => {
             games,
             title: `City For Play ~ Juegos`
         });
+        return;
     }
-
+    if (req.query.category == 'action' || 'adventure' || 'conduction' || 'platform' || 'shooter' || 'simulation' || 'strategic' || 'fight') {
+        const games = await Game.find({
+            'category': req.query.category
+        });
+        res.render('games', {
+            games,
+            title: `City For Play ~ Juegos`
+        });
+    }
 })
 
 router.get('/games/:id', async (req, res) => {
@@ -56,6 +57,8 @@ router.post('/addgame', async (req, res) => {
         if (number == 4) return 'platform';
         if (number == 5) return 'shooter';
         if (number == 6) return 'simulation';
+        if (number == 7) return 'strategic';
+        if (number == 8) return 'fight';
     }
     const newGame = new Game({
         name: req.body.name,

@@ -24,3 +24,11 @@ $('#categorySimulation').on('click', function(){
     url.set('category', 'simulation');
     window.location.search = url;
 })
+$('#categoryStrategic').on('click', function(){
+    url.set('category', 'strategic');
+    window.location.search = url;
+})
+$('#categoryFight').on('click', function(){
+    url.set('category', 'fight');
+    window.location.search = url;
+})
