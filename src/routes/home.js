@@ -6,13 +6,7 @@ const Game = require('../models/game')
 //------------ Router Get ------------//
 router.get('/', async (req, res) => {
     res.render('index', {
-        title: 'City For Play ~ Inicio'
-    });
-})
-
-router.get('/phone', async (req, res) => {
-    res.render('phone', {
-        title: 'City For Play ~ Phone Block'
+        title: 'My City For Play'
     });
 })
 
@@ -23,7 +17,7 @@ router.get('/games', async (req, res) => {
         });
         res.render('games', {
             games,
-            title: `City For Play ~ Juegos`
+            title: `My City For Play`
         });
         return;
     }
@@ -33,7 +27,7 @@ router.get('/games', async (req, res) => {
         });
         res.render('games', {
             games,
-            title: `City For Play ~ Juegos`
+            title: `My City For Play`
         });
     }
 })
@@ -44,7 +38,7 @@ router.get('/games/:id', async (req, res) => {
     game.save();
     res.render('game', {
         game,
-        title: `City For Play ~ ${game.name}`
+        title: `My City For Play - ${game.name}`
     });
 });
 
