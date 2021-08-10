@@ -17,7 +17,7 @@ router.get('/games', async (req, res) => {
         });
         res.render('games', {
             games,
-            title: `My City For Play`
+            title: `My City For Play - Juegos`
         });
         return;
     }
@@ -27,7 +27,7 @@ router.get('/games', async (req, res) => {
         });
         res.render('games', {
             games,
-            title: `My City For Play`
+            title: `My City For Play - Juegos`
         });
     }
 })
