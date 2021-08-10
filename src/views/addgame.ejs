@@ -22,19 +22,31 @@
                 <div class="card card-body shadow">
                     <h3 class="text-center">Add Game</h3>
                     <form action="/addgame" method="post">
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label for="name">Name:</label>
                             <input name="name" type="text" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label for="img">Img:</label>
                             <input name="img" type="text" class="form-control" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
+                            <label for="category">Category:</label>
+                            <select class="form-select" aria-label="Default select example" name="category">
+                                <option selected>Category game</option>
+                                <option value="1">Action</option>
+                                <option value="2">Adventure</option>
+                                <option value="3">Conduction</option>
+                                <option value="4">Platform</option>
+                                <option value="5">Shooter</option>
+                                <option value="6">Simulation</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
                             <label for="mygame">My Game:</label>
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="mygame">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label for="gamebox">Si no es nuestro juego agregar juego:</label>
                             <input name="gamebox" type="text" class="form-control" required>
                         </div>

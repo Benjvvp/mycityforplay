@@ -22,6 +22,9 @@ const gameShema = Schema({
     gamebox: {
         type: String
     },
+    category: {
+        type: String
+    },
     stats: {
         download: {
             type: Number,

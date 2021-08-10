@@ -1,4 +1,4 @@
-var url = new URLSearchParams(window.location.search);
+let url = new URLSearchParams(window.location.search);
 
 $('#categoryAction').on('click', function(){
     url.set('category', 'action');
