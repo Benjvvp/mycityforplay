@@ -5,6 +5,11 @@
     <%- include ("partials/head") %>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5926464001789891"
         crossorigin="anonymous"></script>
+    <meta name="title" content="City For Play">
+    <meta name="description" content="Juega muchos juegos desde tu computadora.">
+    <meta name="og:title" content="City For Play">
+    <meta name="og:description" content="Juega muchos juegos desde tu computadora y disfruta de un bonito dia.">
+    <meta name="og:url" content="https://mycityforplay.com">
     <meta name="robots" content="index, follow">
 </head>
 
@@ -91,8 +96,7 @@
             <div class="col">
                 <a href="/games/<%= games[i]._id %>" class="custom-card">
                     <div class="card shadow-lg mt-2 border-0 gamecard">
-                        <img src="<%= games[i].img %>"
-                            class="card-img-top gamesimg" alt="...">
+                        <img src="<%= games[i].img %>" class="card-img-top gamesimg" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><%= games[i].name %></h5>
                             <div class="stats">
