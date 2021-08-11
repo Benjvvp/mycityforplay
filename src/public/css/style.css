@@ -9,7 +9,9 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-size: cover;
 }
+
 .indextext h1 {
     font-size: 730%;
     font-weight: bold;
@@ -144,6 +146,13 @@
 
 }
 
+.gamesimg {
+    max-width: auto;
+    max-height: 13rem;
+    min-height: 13rem;
+    border-radius: 10px 10px 0 0;
+}
+
 .b1:hover~a {
     color: #f1c40f;
 }
@@ -257,21 +266,25 @@
     border-radius: 10px;
 }
 
-.mybutton{
+.mybutton {
     background-color: #710193;
     color: white;
     font-weight: bold;
 }
-.mybutton a{
+
+.mybutton a {
     color: white;
     text-decoration: none;
 }
-.mybutton:hover{
+
+.mybutton:hover {
     color: white !important;
 }
-.gametitle{
+
+.gametitle {
     font-size: 300%;
 }
+
 @media (max-width:992px) {
     .countdown-container>div {
         margin: 0 1rem;
@@ -293,9 +306,11 @@
     .gamestext h1 {
         font-size: 500%;
     }
+
     .carousel-caption {
         transform: translateY(-50%);
     }
+
     .indextext h1 {
         font-size: 500%;
     }

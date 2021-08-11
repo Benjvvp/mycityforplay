@@ -92,13 +92,11 @@
                 <a href="/games/<%= games[i]._id %>" class="custom-card">
                     <div class="card shadow-lg mt-2 border-0 gamecard">
                         <img src="<%= games[i].img %>"
-                            style="max-width: auto; max-height: 13rem; min-height: 13rem; border-radius: 10px 10px 0 0;"
-                            class="card-img-top" alt="...">
+                            class="card-img-top gamesimg" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><%= games[i].name %></h5>
-
-                            <center>
-                                <div class="stats">
+                            <div class="stats">
+                                <div class="d-flex justify-content-center">
                                     <div class="download game-stats">
                                         <i class="bi bi-download"></i>
                                         <span class="stat"><%= games[i].stats.download %></span>
@@ -118,7 +116,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </center>
+                            </div>
                         </div>
                     </div>
                 </a>
