@@ -4,13 +4,8 @@ const router = express.Router();
 const Game = require('../models/game')
 
 //------------ Router Get ------------//
-router.get('/', async (req, res) => {
-    res.render('index', {
-        title: 'My City For Play'
-    });
-})
 
-router.get('/games', async (req, res) => {
+router.get('/', async (req, res) => {
     if(req.query.category == undefined){
         const games = await Game.find().sort({
             name: 1
@@ -30,6 +25,12 @@ router.get('/games', async (req, res) => {
             title: `My City For Play - Juegos`
         });
     }
+})
+
+router.get('/index', async (req, res) => {
+    res.render('index', {
+        title: 'My City For Play'
+    });
 })
 
 router.get('/games/:id', async (req, res) => {
